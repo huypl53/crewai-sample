@@ -1,0 +1,24 @@
+[project]
+name = "crew_interview"
+version = "0.1.0"
+description = "crew-interview using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "google-generativeai>=0.8.4", #main version in January/2025 - crewai v.0.100.0 and crewai-tools 0.33.0
+    "crewai[tools]>=0.102.0,<1.0.0"
+]
+
+[project.scripts]
+crew_interview = "crew_interview.main:run"
+run_crew = "crew_interview.main:run"
+train = "crew_interview.main:train"
+replay = "crew_interview.main:replay"
+test = "crew_interview.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
